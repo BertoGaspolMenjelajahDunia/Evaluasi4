@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tik Tak Top Course - Pendaftaran Anggota</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top blur-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <!-- Logo -->
+                <div class="logo-circle d-flex align-items-center justify-content-center">
+                    <span class="logo-letter">MHI</span>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="brand-main">Tik Tak Top</span>
+                    <span class="brand-sub">Digital Course Hub</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <!-- Layanan (dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#pendaftaran"
+                           id="layananDropdown" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Layanan
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="layananDropdown">
+                            <li><a class="dropdown-item" href="#pendaftaran">Pendaftaran Anggota</a></li>
+                            <li><a class="dropdown-item" href="#informasi-layanan">Informasi Layanan</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#koleksi">Koleksi</a>
+                    </li>
+
+                    <li class="nav-item d-none d-lg-block">
+                        <a href="#pendaftaran" class="btn btn-accent btn-pill ms-lg-2">
+                            Join Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / JUMBOTRON -->
+    <section id="home" class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Text -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Gen Z Friendly Digital Skills
+                    </div>
+                    <h1 class="hero-title mt-3">
+                        Selamat Datang di
+                        <span class="gradient-text">Tik Tak Top Course</span>
+                    </h1>
+                    <p class="hero-subtitle mt-3">
+                        Upgrade skill digital kamu dengan kelas desain, coding,
+                        dan data yang dikemas fresh dan praktis.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#pendaftaran" class="btn btn-accent btn-pill">
+                            Mulai Daftar
+                        </a>
+                        <a href="#koleksi" class="btn btn-ghost btn-pill">
+                            Lihat Kelas
+                        </a>
+                    </div>
+
+                    <div class="hero-stats mt-4 d-flex flex-wrap gap-3">
+                        <div class="stat-chip">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Kelas Aktif</span>
+                        </div>
+                        <div class="stat-chip">
+                            <span class="stat-number">1K+</span>
+                            <span class="stat-label">Alumni</span>
+                        </div>
+                        <div class="stat-chip">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Project Based</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="col-lg-6">
+                    <div class="hero-card glass-card">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="hero-small-label">Next Intake</span>
+                                <span class="hero-small-value">Batch Februari 2025</span>
+                            </div>
+                            <span class="badge rounded-pill bg-soft-accent text-accent">
+                                Open Registration
+                            </span>
+                        </div>
+
+                        <ul class="hero-list">
+                            <li>
+                                <i class="bi bi-code-slash"></i>
+                                Web Programming & Python untuk pemula.
+                            </li>
+                            <li>
+                                <i class="bi bi-brush"></i>
+                                Desain grafis untuk konten sosial media & brand.
+                            </li>
+                            <li>
+                                <i class="bi bi-bar-chart"></i>
+                                Kelas Excel & Data Analysis yang relevan industri.
+                            </li>
+                        </ul>
+
+                        <div class="hero-mini-form mt-4">
+                            <span class="mini-label">
+                                Ingin daftar cepat?
+                            </span>
+                            <a href="#pendaftaran" class="btn btn-accent btn-pill btn-sm">
+                                Isi Form Pendaftaran
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">About</span>
+                <h2 class="section-title">Belajar dengan ritme yang cocok buat kamu</h2>
+                <p class="section-subtitle">
+                    Tik Tak Top mengkombinasikan konsep kursus klasik dengan style belajar generasi sekarang:
+                    ringkas, praktis, dan fokus ke skill yang benar-benar dipakai.
+                </p>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h5>Belajar Cepat & Padat</h5>
+                        <p>
+                            Materi dibuat modular dan to-the-point, cocok buat mahasiswa
+                            atau pekerja yang punya waktu terbatas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h5>Instruktur Friendly</h5>
+                        <p>
+                            Mentor berpengalaman tapi santai, siap bantu kamu sampai paham
+                            tanpa bikin takut bertanya.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <h5>Vibes Santai, Tetap Serius</h5>
+                        <p>
+                            Suasana kelas ringan, materi relevan dengan dunia kerja
+                            dan juga dunia konten kreator.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENDAFTARAN ANGGOTA -->
+    <section id="pendaftaran" class="section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Pendaftaran</span>
+                <h2 class="section-title">Formulir Pendaftaran Anggota</h2>
+                <p class="section-subtitle">
+                    Lengkapi data di bawah ini. Data akan langsung tersimpan di sistem kami
+                    dan tim Tik Tak Top akan menghubungi kamu via WhatsApp.
+                </p>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-lg-10">
+                    <div class="glass-card form-wrapper">
+                        <form id="pendaftaranForm">
+                        <div class="row g-3">
+                            <!-- Nama Lengkap -->
+                            <div class="col-md-6">
+                                <label for="namaLengkap" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="namaLengkap"
+                                       name="namaLengkap" placeholder="Contoh: Hazim Ganteng" required>
+                            </div>
+
+                            <!-- Program Kursus -->
+                            <div class="col-md-6">
+                                <label for="programKursus" class="form-label">Program Kursus</label>
+                                <select class="form-select" id="programKursus" name="programKursus" required>
+                                    <option value="" disabled selected>Pilih program yang kamu minati</option>
+                                    <option value="Desain Grafis">Desain Grafis</option>
+                                    <option value="Web Programming">Web Programming</option>
+                                    <option value="Data Analysis">Data Analysis</option>
+                                </select>
+                            </div>
+
+                            <!-- NIK / NIS -->
+                            <div class="col-md-6">
+                                <label for="nik" class="form-label">NIK / Nomor Induk Siswa</label>
+                                <input type="text" class="form-control" id="nik" name="nik"
+                                       placeholder="Masukkan NIK atau NIS" required>
+                            </div>
+
+                            <!-- Alamat -->
+                            <div class="col-md-6">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <input type="text" class="form-control" id="alamat" name="alamat"
+                                       placeholder="Alamat domisili saat ini" required>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="col-md-6">
+                                <label for="whatsapp" class="form-label">Nomor WhatsApp</label>
+                                <input type="tel" class="form-control" id="whatsapp" name="whatsapp"
+                                       placeholder="08xxxxxxxxxx" required>
+                                <div class="form-text">
+                                    Pastikan nomor benar, karena info kelas dikirim lewat WhatsApp.
+                                </div>
+                            </div>
+
+                            <div class="col-12 d-flex align-items-center flex-wrap gap-3 mt-2">
+                                <button type="submit" id="submitBtn" class="btn btn-accent btn-pill">
+                                    Kirim Pendaftaran
+                                </button>
+                                <span id="formStatus" class="form-status"></span>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMASI LAYANAN -->
+    <section id="informasi-layanan" class="section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Info</span>
+                <h2 class="section-title">Informasi Layanan Tik Tak Top</h2>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-calendar-week"></i>
+                        </div>
+                        <h5>Jadwal Fleksibel</h5>
+                        <p>
+                            Kelas tersedia weekday & weekend, sesi pagi dan malam.
+                            Cocok untuk mahasiswa, pelajar, maupun karyawan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-display"></i>
+                        </div>
+                        <h5>Hybrid Learning</h5>
+                        <p>
+                            Kombinasi tatap muka di lab dan materi online yang bisa
+                            kamu akses kapan saja untuk review.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-card glass-card h-100">
+                        <div class="icon-pill">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h5>Sertifikat & Portofolio</h5>
+                        <p>
+                            Di akhir kelas, kamu akan punya project portofolio
+                            sekaligus sertifikat yang bisa dipakai untuk melamar kerja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KOLEKSI / DAFTAR KELAS -->
+    <section id="koleksi" class="section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Kelas</span>
+                <h2 class="section-title">Koleksi Kelas Tik Tak Top</h2>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <div class="class-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill bg-soft-accent text-accent">Beginner</span>
+                            <span class="tag-pill">Onsite</span>
+                        </div>
+                        <h5>Kelas Dasar Web</h5>
+                        <p>
+                            Belajar HTML, CSS, dan dasar UI agar kamu bisa bikin landing page
+                            portfolio pribadi yang clean dan modern.
+                        </p>
+                        <div class="class-meta">
+                            <span><i class="bi bi-clock"></i> 6 pertemuan</span>
+                            <span><i class="bi bi-people"></i> Max 20 peserta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="class-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill bg-soft-accent text-accent">Beginner</span>
+                            <span class="tag-pill">Hybrid</span>
+                        </div>
+                        <h5>Kelas Python Pemula</h5>
+                        <p>
+                            Mulai dari nol: sintaks Python, logika, sampai mini project
+                            automasi yang bisa langsung kamu pakai.
+                        </p>
+                        <div class="class-meta">
+                            <span><i class="bi bi-clock"></i> 8 pertemuan</span>
+                            <span><i class="bi bi-people"></i> Max 18 peserta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="class-card glass-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge rounded-pill bg-soft-accent text-accent">Intermediate</span>
+                            <span class="tag-pill">Onsite</span>
+                        </div>
+                        <h5>Kelas Excel untuk Data</h5>
+                        <p>
+                            Fokus ke pengolahan data, dashboard sederhana, dan tips cepat
+                            yang sering dipakai di kantor.
+                        </p>
+                        <div class="class-meta">
+                            <span><i class="bi bi-clock"></i> 5 pertemuan</span>
+                            <span><i class="bi bi-people"></i> Max 15 peserta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-md-6">
+                    <h5 class="mb-1">Tik Tak Top Course</h5>
+                    <p class="mb-1">
+                        Jl. Contoh No. 123, Kota Contoh 12345
+                    </p>
+                    <p class="mb-0">
+                        Email: info@tiktaktop.com · Telp: (021) 123456
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="#" class="social-link">
+                            <i class="bi bi-instagram"></i> @tiktaktop_course
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-facebook"></i> Tik Tak Top Course
+                        </a>
+                    </div>
+                    <div class="mt-2 small text-muted">
+                        © 2025 Tik Tak Top Course. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS (koneksi ke Google Sheets) -->
+    <script src="script.js"></script>
+</body>
+</html>

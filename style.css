@@ -1,0 +1,496 @@
+:root {
+    --bg-main: #020617;
+    --bg-alt: #020617;
+    --card-bg: rgba(15, 23, 42, 0.9);
+    --card-border: rgba(148, 163, 184, 0.4);
+    --accent: #6366f1;
+    --accent-soft: rgba(99, 102, 241, 0.15);
+    --accent-strong: #4f46e5;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+.hero-section {
+        /* Hanya overlay gradient pada hero — gambar utama sekarang di `body`. */
+        background-image: linear-gradient(to bottom right, rgba(2,6,23,0.55), rgba(2,6,23,0.35));
+        background-repeat: no-repeat;
+}
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-main);
+    /* Background utama: gambar + overlay gradient + dekorasi radial.
+       background-attachment: fixed agar gambar "tetap" saat scroll di desktop. */
+    background:
+        linear-gradient(to bottom right, rgba(2,6,23,0.55), rgba(2,6,23,0.3)),
+        url("img/mobil.jpg") center/cover no-repeat fixed,
+        radial-gradient(circle at 0% 0%, rgba(96, 165, 250, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(167, 139, 250, 0.07), transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(52, 211, 153, 0.06), transparent 55%),
+        var(--bg-main);
+    padding-top: var(--navbar-height);
+    scroll-behavior: smooth;
+}
+
+/* Overlay gelap permanen agar background tetap terasa "gelap" saat scroll
+   dan teks/komponen tetap mudah dibaca. Pseudo-element dipasang fixed di bawah
+   elemen konten (z-index:0). */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(2,6,23,0.55);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Pastikan elemen utama berada di atas overlay */
+nav,
+.hero-section,
+.section-gap,
+.footer-section,
+.glass-card,
+.info-card,
+.class-card {
+    position: relative;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+.blur-nav {
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.85));
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.brand-main {
+    font-size: 1rem;
+}
+
+.brand-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Circle logo */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 0 0, #38bdf8, #6366f1);
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.7);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-letter {
+    margin-top: -2px;
+}
+
+/* Nav links */
+.nav-link {
+    font-weight: 400;
+    color: var(--text-muted) !important;
+    font-size: 0.9rem;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #f9fafb !important;
+}
+
+/* Buttons */
+.btn-pill {
+    border-radius: 999px;
+    padding: 0.45rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    border: none;
+    color: #f9fafb;
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.5);
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, #818cf8, #4f46e5);
+    color: #f9fafb;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    color: var(--text-main);
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: #f9fafb;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+/* Hero */
+.hero-section {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+    padding: 4rem 0 3rem;
+}
+
+/* Background image dari folder img (mobil.jpg). Tambahkan overlay gradient
+   agar teks tetap kontras. Sesuaikan posisi pada layar kecil. */
+.hero-section {
+    background-image: linear-gradient(to bottom right, rgba(2,6,23,0.6), rgba(2,6,23,0.35)), url("img/mobil.jpg");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.hero-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 3.4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #a855f7, #6366f1, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 32rem;
+}
+
+.hero-stats {
+    margin-top: 1rem;
+}
+
+.stat-chip {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(15, 23, 42, 0.9);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.stat-number {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Hero card kanan */
+.glass-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.75),
+        0 0 0 1px rgba(15, 23, 42, 0.7);
+    padding: 1.5rem 1.7rem;
+    backdrop-filter: blur(18px);
+}
+
+.hero-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(129, 140, 248, 0.15), transparent 60%),
+        radial-gradient(circle at 90% 80%, rgba(52, 211, 153, 0.16), transparent 55%);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.hero-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-small-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.hero-small-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.bg-soft-accent {
+    background-color: var(--accent-soft);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+/* Hero list */
+.hero-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 0;
+}
+
+.hero-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.45rem 0;
+}
+
+.hero-list i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+/* Hero mini CTA */
+.hero-mini-form {
+    margin-top: 1.5rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+}
+
+.hero-mini-form .mini-label {
+    color: var(--text-muted);
+}
+
+/* Section template */
+.section-gap {
+    padding: 4.5rem 0 4.2rem;
+}
+
+.section-header {
+    max-width: 640px;
+    margin: 0 auto 1.6rem;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 0.2rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-top: 0.8rem;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Info cards */
+.info-card {
+    padding: 1.5rem 1.6rem;
+}
+
+.info-card h5 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.icon-pill {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.65rem;
+    background: rgba(37, 99, 235, 0.15);
+    color: #93c5fd;
+    font-size: 1.1rem;
+}
+
+/* Form pendaftaran */
+.form-wrapper {
+    padding: 1.9rem 2rem;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: #e5e7eb;
+}
+
+.form-control,
+.form-select {
+    background-color: rgba(15, 23, 42, 0.8);
+    border-radius: 14px;
+    border: 1px solid rgba(55, 65, 81, 0.8);
+    color: var(--text-main);
+    font-size: 0.85rem;
+}
+
+.form-control::placeholder {
+    color: rgba(148, 163, 184, 0.9);
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.7);
+    border-color: rgba(129, 140, 248, 1);
+    background-color: rgba(15, 23, 42, 0.95);
+}
+
+.form-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.form-status {
+    font-size: 0.82rem;
+}
+
+/* Class cards / Koleksi */
+.class-card {
+    padding: 1.4rem 1.6rem;
+}
+
+.class-card h5 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.class-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.tag-pill {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    color: var(--text-muted);
+}
+
+.class-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.class-meta i {
+    margin-right: 0.25rem;
+}
+
+/* Footer */
+.footer-section {
+    border-top: 1px solid rgba(75, 85, 99, 0.75);
+    padding: 1.8rem 0 1.6rem;
+    background: rgba(15, 23, 42, 0.98);
+}
+
+.social-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.social-link i {
+    margin-right: 0.4rem;
+}
+
+.social-link:hover {
+    color: #e5e7eb;
+}
+
+/* Utilities */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding-top: 3rem;
+        background-position: center top;
+        background-size: cover;
+        /* kurangi ketinggian visual agar teks tidak tertutup oleh gambar */
+        padding-bottom: 2.5rem;
+        /* background-attachment: fixed sering bermasalah pada mobile; gunakan scroll */
+        background-attachment: scroll;
+    }
+
+    .form-wrapper {
+        padding: 1.4rem 1.2rem;
+    }
+
+    .hero-mini-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
